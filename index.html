@@ -1,90 +1,443 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Innomatics Research Labs</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Innomatics Research Labs Clone">
+    <title>Innomatics Clone</title>
+    <link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style (1).css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo"><img src="data:image/png;base64,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" alt="Innomatics Research Labs"></div>
-        <nav>
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span><b><strong>Enquire Now:</strong></b></span>
+
+            <div class="en-closed"><span>Hyd:  📞 9032401073</span></div>
+            
+            <div class="en-closed"><span>Pune: 📞 9391801785</span></div>
+            
+            <div class="en-closed"><span>Bengaluru: 📞 940943376</span></div>
+            
+        </div>
+    </div>
+
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="logo.webp" alt="Innomatics Logo">
+        </div>
+        <nav class="navbar">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#scholars">IT Scholars Program</a></li>
-                <li><a href="#internship">Internship</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#paynow">Pay Now</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#courses">Courses <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#data-science">Data Science</a></li>
+                        <li><a href="#full-stack">Full Stack Development</a></li>
+                        <li><a href="#digital-marketing">Digital Marketing</a></li>
+                        <li><a href="#aws">Amazon Web Services (AWS)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#program">IT Scholars Program</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#internship">Internship <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#free-fullstack-internship">Free Full Stack Internship</a></li>
+                        <li><a href="#free-generative-ai-internship">Free Generative AI Internship</a></li>
+                        <li><a href="#free-data-science-internship">Free Data Science Internship</a></li>
+                        <li><a href="#data-science-internship">Data Science Internship</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#about">About Us <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#placements">Placements</a></li>
+                        <li><a href="#partner-with-us">Partner with us</a></li>
+                        <li><a href="#contact-us">Contact us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#events">Events<span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#generative-ai-bootcamp">5 Days Generative Ai Bootcamp</a></li>
+                        <li><a href="#data-science-webinar">Free Online Data Science Webinar</a></li>
+                        <li><a href="#campus-ambassador">Campus Ambassador</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
-    </header>
-    
-    <section id="hero">
-        <h1>Transform Your Career with Innomatics</h1>
-        <p>Join industry-leading courses and mentorship programs.</p>
-        <button>Enroll Now</button>
-    </section>
-    
-    <section id="courses">
-        <h2>Our Courses</h2>
-        <div class="course-grid">
-            <div class="course"><h3>Data Science</h3><p>Learn AI, ML, and Big Data.</p><a href="#">Read More</a></div>
-            <div class="course"><h3>Full-Stack Development</h3><p>Master front-end and back-end technologies.</p><a href="#">Read More</a></div>
-            <div class="course"><h3>Cybersecurity</h3><p>Protect systems from cyber threats.</p><a href="#">Read More</a></div>
-        </div>
-    </section>
-    
-    <section id="testimonials">
-        <h2>Student Success Stories</h2>
-        <div class="testimonial-container">
-            <div class="testimonial-row">
-                <img src="https://www.innomatics.in/wp-content/uploads/2024/11/Aaesha_Azeemuddin-400x516.jpg" alt="Student Photo">
-                <img src="https://www.innomatics.in/wp-content/uploads/2024/11/Alladi_Ranjith-400x516.jpg" alt="Student Photo">
-                <img src="https://www.innomatics.in/wp-content/uploads/2024/11/Cherukupalli_Indhu-400x516.jpg" alt="Student Photo">
-                <img src="https://www.innomatics.in/wp-content/uploads/2024/11/G._Venkata_Mareswararao-400x516.jpg" alt="Student Photo">
+        <button class="pay-now">$ Pay Now</button>
+    </div>
+</header>
+
+
+    <!-- Fixed Vertical Register Button -->
+    <div class="fixed-sidebar">
+        <button class="register-now">Register Now</button>
+    </div>
+
+    <!-- Fixed Online Button -->
+    <div class="online-button">
+        <button>Online</button>
+    </div>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero">
+        <div class="container">
+            <div class="bannershow">
+                <div class="bannershow-images">
+                    <img src="banner1.png" alt="Location 1">
+                    <img src="banner2.png" alt="Location 2">
+                    <img src="banner3.png" alt="Location 3">
+                    <img src="banner4.png" alt="Location 4">
+                    <img src="banner5.png" alt="Location 5">
+                    <img src="banner6.png" alt="Location 5">
+                </div>
             </div>
         </div>
     </section>
-    
-    <section id="blog">
-        <h2>Latest Blogs</h2>
-        <div class="blog-preview">
-            <h3>How AI is Shaping the Future</h3>
-            <p>Discover the impact of artificial intelligence in various industries.</p>
+
+    <section class="content">
+        <div class="left-section">
+            <h1>We just don't train,<br>We transform the careers</h1>
+            <p>
+                <strong>Innomatics Research Labs</strong> is a pioneer in 
+                <strong>“Transforming Careers and Lives”</strong> of individuals in the Digital Space by catering advanced training on 
+                <span class="highlight">NASSCOM Future skills prime Certified Data Science, Python, Predictive Analytics Modeler, Machine Learning, Artificial Intelligence (AI), Generative AI, Full-stack web development</span> 
+                and Career Launching program for students who are willing to showcase their skills in the competitive job market with valuable credentials, and also can complete courses with a certificate.
+            </p>
+            <h3>NASSCOM Futureskills Prime Registered Business Partner</h3>
+            <p>
+                As an authorized <strong>NASSCOM FutureSkills Prime Training Partner</strong>, we are dedicated to providing practical and real-world learning experiences. Our training includes case studies and business challenges to ensure job-ready skills. We also organize regular hackathons, workshops, and meetups to enhance learning and productivity. With a dedicated placement team, we partner with over <strong>100 companies</strong> to match them with skilled professionals, helping businesses grow while shaping successful careers.
+            </p>
+            <h4>Best Edtech company</h4>
+            <p>
+                Recognized by <strong>Times of India</strong> as the Best Training Institute in Hyderabad for Data Science & Digital Marketing, we have trained and placed <strong>10,000</strong>+ students. With <strong>350</strong>+ batches, 70</strong>+ hackathons, <strong>500</strong>+ industry experts, <strong>500</strong>+ webinars, and <strong>500</strong>+ hiring partners, we focus on practical learning and skill development through advanced classrooms and modern training methods.
+            </p>
         </div>
-        <div class="blog-preview">
-            <h3>Top 5 Programming Languages in 2025</h3>
-            <p>Stay ahead in tech with the most in-demand languages.</p>
+        <div class="right-section">
+            <h2>What we are?</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="GlobalLeaders.png" alt="Global Leaders">
+                    <p>Global Leaders in training</p>
+                </div>
+                <div class="card">
+                    <img src="Practical Oriented Approach.png" alt="Practical Approach">
+                    <p>Practical oriented approach</p>
+                </div>
+                <div class="card">
+                    <img src="Hands-On Project & Internship.png" alt="Projects and Internship">
+                    <p>Hands-on projects & Internship</p>
+                </div>
+                <div class="card">
+                    <img src="Placement Assistance.png" alt="Placement Assistance">
+                    <p>100% Placement Assistance</p>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <section class="trending-courses">
+        <h2>Trending Courses of 2025</h2>
+        <div class="courses-container">
+            <!-- Course 1 -->
+            <div class="course-card">
+                <img src="NASSCOM Futureskills Prime Certified Data Science.jpg" alt="NASSCOM Futureskills Prime Certified Data Science">
+                <h3>NASSCOM Futureskills Prime Certified Data Science</h3>
+                <p>
+                    This is a great choice for tech geeks, students, working professionals, and aspiring data scientists who want to upskill and build a better foundation in Data Science.
+                </p>
+                <button class="read-more">Read More</button>
+            </div>
+            <!-- Course 2 -->
+            <div class="course-card">
+                <img src="Full Stack Development.jpg" alt="Full Stack Development">
+                <h3>Full Stack Development</h3>
+                <p>
+                    Learn the right skills to break into a development career and advance yourself as a full-stack developer. It includes Frontend, Backend, databases, debugging, and testing.
+                </p>
+                <button class="read-more">Read More</button>
+            </div>
+            <!-- Course 3 -->
+            <div class="course-card">
+                <img src="Generative AI.jpeg" alt="Generative AI">
+
+                
+                <h3>Generative AI</h3>
+                <p>
+                    Generative AI Course at Innomatics is perfect for students, job seekers, and professionals who want to learn the latest AI tools and skills to grow their careers.
+                </p>
+                <button class="read-more">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages-section">
+<!-- Left Side: Advantages List -->
+<div class="advantages">
+    <h2>Advantages of training at Innomatics</h2>
+    <div class="advantage-box">
+        <ul>
+            <li>Flexible Online Live and Classroom Training</li>
+            <li>100% Internship guarantee program</li>
+            <li>Dedicated Placement vertical</li>
+            <li>Mastery level certifications that are globally accepted</li>
+            <li>Backup Classes & Lifetime LMS access</li>
+            <li>Completely Practical Oriented Approach</li>
+            <li>Hands-on training on the capstone projects</li>
+            <li>Bi-weekly connects from industry experts</li>
+            <li>Domain Teach back and Reverse Presentations</li>
+            <li>Free Technical Support & Individual Career Counselling</li>
+            <li>Expert mentoring Weekly Tests & Assignments</li>
+            <li>Mock-up Exams, and Interviews</li>
+            <li>Meet-ups, Workshops, Hackathons & Conferences</li>
+            <li>Exclusive programs for Non-IT professionals</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Right Side: Video Section -->
+    <div class="video-section">
+        <h2>Let's Watch a Video Bite From Our Institute</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/OKUFrW40xyI" frameborder="30px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <a href="https://www.youtube.com/@InnomaticsResearchLabs" target="_blank">
+            <button class="watch-more">Watch More Videos</button>
+        </a>
+    </div>
+    </section>
+
+    <section class="training-section">
+        <h2><center>Why People Choose Our Training</center></h2>
+
+        <!-- Tabs for categories -->
+        <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" onclick="showContent('expert-trainers')">EXPERT TRAINERS</button>
+            <button class="tab" onclick="showContent('capstone-projects')">CAPSTONE PROJECTS</button>
+            <button class="tab" onclick="showContent('inhouse-internship')">INHOUSE INTERNSHIP</button>
+            <button class="tab" onclick="showContent('placements')">PLACEMENTS</button>
+        </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-box" id="expert-trainers">
+            <img src="Expert-Trainers.png" alt="Expert Trainers">
+            <div class="text-content">
+                <p>Innomatics explored all over India to get the best trainers and succeeded with it. We have a pool of trainers working with highly qualified business partners and fortune companies to provide advanced and comprehensive training.<br>
+                They curate the course content with an eye on the industry needs and standards to make students skillful and champions in solving the complex challenges of the industry.</p>
+            </div>
+        </div>
+
+        <div class="content-box" id="capstone-projects">
+            <img src="Generative AI.jpeg" alt="Capstone-Projects">
+            <div class="text-content">
+                <p>At Innomatics, we believe in a practical learning approach. Making students work on real-time data helps in giving them a clear visualization of how it is applied in the real world.<br>
+                    Considering this, we follow a collaborative group-oriented approach to learn with discussion forums and get hands-on with capstone projects to make our trainees good team players and strong thinkers to solve problems.</p>
+            </div>
+        </div>
+
+        <div class="content-box" id="inhouse-internship">
+            <img src="In-House-Internship.jpg" alt="inhouse-internship">
+            <div class="text-content">
+                <p>Internships aren't just about ground work at Innomatics. We believe that with the right program, One can develop young talents and lay a foundation for recruiting brilliant young minds to work for any organization.<br>
+                    We do provide paid/unpaid internship programs that offer the opportunity to edge out larger competitors by providing interns with opportunities to conquer the business challenges.</p>
+            </div>
+        </div>
+
+        <div class="content-box" id="placements">
+            <img src="Expert-Trainers.png" alt="Expert Trainers">
+            <div class="text-content">
+                <p>We have a collaboration with over 100+ MNCs and SMEs who directly source their business requirements through Innomatics. Also having a dedicated placement verticle that enables trainees to take advantage and excel in the career with extensive knowledge gained at Innomatics.<br>
+                    For the benefit of the students to face the real challenges, we conduct mockup interviews with instant feedback,1-1 mentorship, provide extensive support to the Learning Management System
+                    (LMS) where they can access the classes and stay updated, attend career fairs, Hackathons, workshops and meetups with leading industry experts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Section -->
+    <div class="meet">
+        <h2 class="meet-text">Meet our experts</h2>
+        <button class="call-button">
+        <span class="call-icon">&#9990</span> 9951666670
+        </button>
+    </div>
+    
+    <section class="reviews-section">
+        <h2 class="reviews-title">A few reviews from our students</h2>
+    
+        <div class="review-container">
+            <button class="arrow left-arrow" onclick="changeReview(-1)">&#10094;</button>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
+            <div class="review-box" id="review-box">
+                <h3 class="review-author" id="review-author">prathibha</h3>
+                <p class="review-text" id="review-text">
+                    Innomatics Research Labs is the best platform to transform our career. Here, I have done a Data Analytics course and was recently placed in a company.
+                    They provide excellent quality education, practice sessions, and conduct many hackathons to enhance our skills. I personally like the LMS facility, which is lifetime access. 
+                    Here, we can see all our class recordings throughout the course. Faculty and staff are so friendly. They will guide us until we get placed.
+                </p>
+            </div>
+    
+            <button class="arrow right-arrow" onclick="changeReview(1)">&#10095;</button>
+        </div>
+    
+        <button class="read-more-btn">Read More</button>
+    </section>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <h2><center>Here Are Some Of Our Success Stories</center></h2>
+        <div class="stories-container">
+            <div class="story-card">
+                <img src="Aaesha_Azeemuddin.jpg" alt="Aaesha Azeemuddin">
+            </div>
+            <div class="story-card">
+                <img src="Alladi_Ranjith.jpg" alt="Alladi Ranjith">
+            </div>
+            <div class="story-card">
+                <img src="Cherukupalli_Indhu.jpg" alt="Cherukupalli Indhu">
+            </div>
+            <div class="story-card">
+                <img src="G._Venkata_Mareswararao.jpg" alt="G. Venkata Mareswararao">
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" align="right">
+            <span class="page active">1</span>
+            <span class="page">2</span>
+            <span class="next">Next</span>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h2><center>Read Latest Business News & Blog updates</center></h2>
+        <div class="blog-container">
+            <div class="blog-card">
+                <img src="oop--2-.png" alt="OOPS Concepts in Python">
+                <h3>OOPS Concepts in Python: Part 1</h3>
+                <p>Class, Objects, Constructor, Methods in Python ...</p>
+            </div>
+            <div class="blog-card">
+
+                <img src="Blog-Real-world Applications of Data Science.png" alt="Data Science Applications">
+                <h3>Real-world Applications of Data Science in Today's Fast-paced Environment</h3>
+                <p>Data science is a field that has emerged as an...</p>
+            </div>
+            <div class="blog-card">
+                <img src="News-Why should you join Innomatics.jpg" alt="Join Innomatics">
+                <h3>Why should you join Innomatics?</h3>
+                <p>At Innomatics we believe in looking at the...</p>
+            </div>
+        </div>
+            <a href="#" class="older-entries">« Older Entries</a>
     </section>
     
-    <footer>
-        <p>Contact us: info@innomatics.in | Follow us on social media</p>
-        <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left Section -->
+            <div class="footer-about">
+                <img src="innomatics-footer-logo.png" alt="Innomatics Research Labs Logo" class="logo">
+                <p>A leading training institute, <strong>Innomatics Research Labs</strong> offers courses in areas such as NASSCOM Futureskills Prime Certified <strong>Data Science</strong>, Python, AI, Data Analytics, <strong>Full Stack Development</strong>, and Generative AI. Our practical training is designed meticulously to meet industry needs and provide valuable certification upon completion, empowering individuals to excel in their careers.</p>
+                
+                <!-- Social Media Links -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/school/innomatics-research-labs/posts/?feedView=all"><img src="linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://www.facebook.com/innomaticshyd"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/innomatics_research_labs/"><img src="icons8-instagram-48.png" alt="Instagram"></a>
+                    <a href="https://x.com/innomaticshyd?mx=2"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/c/InnomaticsResearchLabs"><img src="youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+
+            <!-- Middle Section -->
+            <div class="footer-links">
+                <h3>Courses</h3>
+                <ul>
+                    <li><a href="#">Data Science</a></li>
+                    <li><a href="#">Online Data Science</a></li>
+                    <li><a href="#">Advanced Generative AI</a></li>
+                    <li><a href="#">Full Stack Web Developer</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Placements</a></li>
+                    <li><a href="#">Partner with us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div class="footer-contact">
+                <h3>Contact Us:</h3><br>
+                <p><strong>📍 Kukatpally — Hyderabad</strong><br>
+                    205, 2nd Floor, Fortune Signature, Near JNTU Metro Station,<br>
+                    Kukatpally, Hyderabad, Telangana 500085<br>
+                    Call us: <a href="tel:+9118004125046">+91-1800 412 5046</a></p><br>
+
+                <p><strong>📍 Pune</strong><br>
+                    2nd Floor, Sai Sayaji Apartment, 201 Paud Rd, beside VANAZ Metro,<br>
+                    above Bata showroom, Ramkrishna Paramhans Nagar, Kothrud, Pune, Maharashtra 411038<br>
+                    Call us: <a href="tel:+919951666671">+91-9951666671</a></p><br>
+
+                <p><strong>📍 Bengaluru</strong><br>
+                    NO.576/B, 3rd FLOOR, Swetha Arcade, Service Road, 100 FT ROAD, Hsr Layout, Bengaluru, Karnataka 560068<br>
+                    Call us: <a href="tel:+919951666672">+91-9951666672</a></p><br>
+
+                <p>📞 <strong>Phone/Whatsapp:</strong><br>
+                    <a href="tel:+9118004125046">+91-1800 412 5046</a> / <a href="tel:+919951666671">+91-9951666671</a>
+                <br><a>+91-9951666672</a></p><br>
+
+                <p>📧 <strong>Email Us:</strong> <a href="mailto:Admissions@innomatics.in">Admissions@innomatics.in</a></p><br>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2025 Innomatics Research Labs Pvt Ltd, All rights reserved.</p>
         </div>
     </footer>
+    
+    
+
+    <script>
+        function showContent(sectionId) {
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+
+    // Highlight the clicked tab
+    event.target.classList.add('active');
+
+    // Hide all content sections
+    document.querySelectorAll('.content-box').forEach(content => content.style.display = 'none');
+
+    // Show the selected content
+    document.getElementById(sectionId).style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
