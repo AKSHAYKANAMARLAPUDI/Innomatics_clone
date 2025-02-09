@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #0056b3;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #0073e6;
+    color: white;
+}
+
+#hero button {
+    padding: 10px 20px;
+    background: #ffcc00;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#hero button:hover {
+    background: #ffaa00;
+}
+
+/* Courses */
+#courses {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.course-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.course {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.course a {
+    display: block;
+    margin-top: 10px;
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.course a:hover {
+    text-decoration: underline;
+}
+
+/* Testimonials */
+#testimonials {
+    background: #e6f7ff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    font-style: italic;
+}
+
+/* Blog Preview */
+#blog {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.blog-preview {
+    background: white;
+    padding: 20px;
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#contact label {
+    font-size: 1em;
+    align-self: flex-start;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#contact button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
